@@ -4,16 +4,29 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
     <title>WesFlix</title>
 
-    <link href="lib/bootstrap.min.css" rel="stylesheet">
-    <script src="assets/js/ie-emulation-modes-warning.js"></script>
-    <link href="css/carousel.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="../static/lib/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../static/assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="../static/css/carousel.css" rel="stylesheet">
+    <link href="../static/css/styles.css" rel="stylesheet">
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -34,9 +47,9 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="template">About</a></li>
+                <li class="active"><a href="#">Contact</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                   <ul class="dropdown-menu">
@@ -51,9 +64,9 @@
                 </li>
               </ul>
             <div class="input-group" style="padding-top: 8px">
-              <input type="text" class="form-control" id="input" placeholder="Search for a specific trailer...">
+              <input type="text" class="form-control" placeholder="Search for a specific trailer...">
               <span class="input-group-btn">
-                <button class="btn btn-default" type="button" id="input">Go! </button>
+                <button class="btn btn-default" type="button">Go! </button>
               </span>
             </div>
           </div>
@@ -61,43 +74,34 @@
 
       </div>
     </div>
-
-      <hr class="featurette-divider" style="border-top-color: #fff ">
+     <hr class="featurette-divider" style="border-top-color: #fff ">
 
       <div class="row featurette">
-      <div class="container" style="padding-left:0;">
-        <div class="col-md-4" id="infoSec">
-          <img src="imgs/dirtyharry.png" alt="Dirty Harry poster"  height="300">
-          <h2>10:00 PM, July 17</h2>
-          <ul class="movieInfo">
-          <h2>Dirty Harry</h2>
-          <li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
-          <li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
-          <li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
-          <li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
-          <li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
-          </ul>
-
-          <p><a class="btn btn-default" href="#" role="button">Get Tickets &raquo;</a></p>
+        <div class="col-md-7 col-md-push-5">
+          <h2 class="featurette-heading">Contact: <span class="text-muted">Engineer.</span></h2>
+          <p class="lead">Tyler Harden, Class of 2017, Software Engineer: tharden@wesleyan.edu</p>
         </div>
-        <div class="col-md-8">
-          <iframe  class="embed-responsive-item" width="700" height="394" src="https://www.youtube.com/embed/HjBNldYiUmg" frameborder="0" allowfullscreen></iframe>
+        <div class="col-md-5 col-md-pull-7">
+          <img class="featurette-image img-responsive center-block" src="../static/imgs/tyler.jpg" alt="image of tyler" id="contactImg">
         </div>
       </div>
-       <div class="container">
-        <h2> About: </h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a vehicula orci. Maecenas lectus mauris, porta sit amet tincidunt quis, laoreet in lorem. Aenean blandit porttitor magna ut feugiat. Duis at urna quis mauris mollis ullamcorper vel vitae elit. Cras sit amet suscipit tortor. 
-        </p>  
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7" id="filmContact">
+          <h2 class="featurette-heading">Contact: <span class="text-muted">Film Series.</span></h2>
+          <p class="lead">If you see an issue with the schedule, or would like to submit recommendations for movies, contact the wesleyan film series: @filmseries</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive center-block" src="../static/imgs/wes.png" alt="the wesleyan shield" id="contactImg">
+        </div>
       </div>
-      </div>
 
-      <hr class="featurette-divider" style="boarder-botom:">
-     
+      <hr class="featurette-divider">
 
-
-
-      <!-- FOOTER -->
-      <footer>
+      <!-- /END THE FEATURETTES -->
+    <footer><!--footer-->
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>&copy; 2015 Tyler Harden. </p>
       </footer>
@@ -108,11 +112,11 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="lib/jquery.min.js"></script>
-    <script src="lib/bootstrap.min.js"></script>
+    <script src="../static/lib/jquery.min.js"></script>
+    <script src="../static/lib/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="assets/js/vendor/holder.min.js"></script>
+    <script src="../static/assets/js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../static/assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
