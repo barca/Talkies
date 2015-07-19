@@ -76,6 +76,15 @@
 h2 {
  font-size: 25px;
 }
-.input-group {
-  color: #8C8C8C;
+#input{
+  background-color: #8C8C8C;
+}
+.movieInfo {
+    padding-left: 0;
+}
+.movieInfo li{
+  display: inline;
+}
+.glyphicon {
+  color: #E6E600;
 }
