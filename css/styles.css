@@ -88,3 +88,12 @@ h2 {
 .glyphicon {
   color: #E6E600;
 }
+#input {
+  border: 0;
+  height: 34px;
+  color: #333;
+}
+.form-control::-webkit-input-placeholder { color: black; }
+.form-control:-moz-placeholder { color: black; }
+.form-control::-moz-placeholder { color: black; }
+.form-control:-ms-input-placeholder { color: black; }
