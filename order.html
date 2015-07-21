@@ -4,14 +4,27 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
     <title>WesFlix</title>
 
+    <!-- Bootstrap core CSS -->
     <link href="lib/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
     <link href="css/carousel.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
   </head>
@@ -34,8 +47,8 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#about">Template</a></li>
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="template.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -61,57 +74,20 @@
 
       </div>
     </div>
+    <hr class="featurette-divider" style="border-top-color: #fff ">
 
-      <hr class="featurette-divider" style="border-top-color: #fff ">
+    <container>
 
-      <div class="row featurette">
-      <div class="container" style="padding-left:0;">
-        <div class="col-md-4" id="infoSec">
-          <img src="imgs/dirtyharry.png" alt="Dirty Harry poster"  height="300">
-          <h2>10:00 PM, July 17</h2>
-          <ul class="movieInfo">
-          <h2>Dirty Harry</h2>
-          <li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
-          <li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
-          <li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
-          <li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
-          <li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
-          </ul>
-
-          <p><a class="btn btn-default" href="order.html" role="button">Get Tickets &raquo;</a></p>
-        </div>
-        <div class="col-md-8">
-          <iframe  class="embed-responsive-item" width="700" height="394" src="https://www.youtube.com/embed/HjBNldYiUmg" frameborder="0" allowfullscreen></iframe>
-          <div class="row featurette">
-            <div class="col-md-2">
-            <h2>Director:</h2>
-            </div>
-            <div class="col-md-4">
-            <h2 class="text-muted">Don Siegel</h2>
-            </div>
-            <div class="col-md-1">
-            <h2>Cast:</h2>
-            </div>
-            <div class="col-md-5">
-            <h2 class="text-muted">Clint Eastwood</h2>
-            <h2 class="text-muted">Andrew Robbinson</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-       <div class="container">
-        <h2> About: </h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a vehicula orci. Maecenas lectus mauris, porta sit amet tincidunt quis, laoreet in lorem. Aenean blandit porttitor magna ut feugiat. Duis at urna quis mauris mollis ullamcorper vel vitae elit. Cras sit amet suscipit tortor. 
-        </p>  
-      </div>
-      </div>
-
-      <hr class="featurette-divider" style="boarder-botom:">
-     
-
-
+      <h2 class="featurette-heading">Order Tickets: <span class="text-muted">Dirty Harry</span></h2>
+      <input type="text" class="form-control purchase" placeholder="Phone Number">
+      <input type="text" class="form-control purchase" placeholder="Email Address">
+      <input type="text" class="form-control purchase" placeholder="ID Card Number">
+      <input type="text" class="form-control purchase" placeholder="ID Card Number">
+      <button class="btn btn-primary purchase btn-block"  type="button">Buy! </button>
+    </container>
 
       <!-- FOOTER -->
+      <hr class="featurette-divider" style="boarder-botom:">
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>&copy; 2015 Tyler Harden. </p>

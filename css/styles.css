@@ -97,3 +97,6 @@ h2 {
 .form-control:-moz-placeholder { color: black; }
 .form-control::-moz-placeholder { color: black; }
 .form-control:-ms-input-placeholder { color: black; }
+.purchase {
+  height: 64px;
+}
