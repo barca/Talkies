@@ -85,9 +85,6 @@ h2 {
 .movieInfo li{
   display: inline;
 }
-.glyphicon {
-  color: #E6E600;
-}
 #input {
   border: 0;
   height: 34px;
@@ -99,4 +96,16 @@ h2 {
 .form-control:-ms-input-placeholder { color: black; }
 .purchase {
   height: 64px;
+}
+.calendar-divider{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.calendar-item{
+  margin-top:20px;
+  margin-bottom: 0px;
+  text-align: justify;
+}
+.min {
+  margin-top: 0px;
 }
