@@ -6,21 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-<!--    <link rel="icon" href="../../favicon.ico">
--->
+    <link rel="icon" href="../../favicon.ico">
+
     <title>WesFlix</title>
 
     <link href="../static/lib/bootstrap.min.css" rel="stylesheet">
-    <script src="assets/js/ie-emulation-modes-warning.js"></script>
+    <script src="../static/assets/js/ie-emulation-modes-warning.js"></script>
     <link href="../static/css/carousel.css" rel="stylesheet">
     <link href="../static/css/styles.css" rel="stylesheet">
   </head>
 <!-- NAVBAR
 ================================================== -->
-  <body>
+ <body>
     <div class="navbar-wrapper">
       <div class="container">
-
         <nav class="navbar navbar-inverse navbar-static-top">
           <div class="container">
             <div class="navbar-header">
@@ -34,21 +33,10 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li><a href="/">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="contact">Contact</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </li>
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="template.html">Template</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
               </ul>
             <div class="input-group" style="padding-top: 8px">
               <input type="text" class="form-control" id="input" placeholder="Search for a specific trailer...">
@@ -58,11 +46,10 @@
             </div>
           </div>
         </nav>
-
       </div>
     </div>
 
-      <hr class="featurette-divider" style="border-top-color: #fff ">
+      <hr class="featurette-divider" style="border-top-color: #fff">
 
       <div class="row featurette">
       <div class="container" style="padding-left:0;">
@@ -78,31 +65,50 @@
           <li><span class="glyphicon glyphicon-star" aria-hidden="true"></span></li>
           </ul>
 
-          <p><a class="btn btn-default" href="#" role="button">Get Tickets &raquo;</a></p>
+          <p><a class="btn btn-default" href="order.html" role="button">Get Tickets &raquo;</a></p>
         </div>
         <div class="col-md-8">
           <iframe  class="embed-responsive-item" width="700" height="394" src="https://www.youtube.com/embed/HjBNldYiUmg" frameborder="0" allowfullscreen></iframe>
+          <div class="row featurette">
+            <div class="col-md-2">
+            <h2>Director:</h2>
+            <h2>Runtime:</h2>
+            </div>
+            <div class="col-md-4">
+            <h2 class="text-muted">Don Siegel</h2>
+            <h2 class="text-muted">103 minutes</h2>
+            </div>
+            <div class="col-md-1">
+            <h2>Cast:</h2>
+            </div>
+            <div class="col-md-5">
+            <h2 class="text-muted">Clint Eastwood</h2>
+            <h2 class="text-muted">Andrew Robbinson</h2>
+            </div>
+          </div>
         </div>
       </div>
        <div class="container">
         <h2> About: </h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a vehicula orci. Maecenas lectus mauris, porta sit amet tincidunt quis, laoreet in lorem. Aenean blandit porttitor magna ut feugiat. Duis at urna quis mauris mollis ullamcorper vel vitae elit. Cras sit amet suscipit tortor.
         </p>
-      </div>
-      </div>
+     </div>
 
-      <hr class="featurette-divider" style="boarder-botom:">
+
+      <hr class="featurette-divider min" style="border-top-color: #fff">
 
 
 
 
       <!-- FOOTER -->
       <footer>
+        <div class="container">
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>&copy; 2015 Tyler Harden. </p>
+        </div>
       </footer>
 
-    </div><!-- /.container -->
+    <!-- /.container -->
 
 
     <!-- Bootstrap core JavaScript
