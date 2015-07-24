@@ -42,3 +42,5 @@ description = ("Harrison Ford, Replicant Hunter. His assignment: eliminate"
 				"have returned to Earth")
 blade_runner = Movie("Blade Runner",
 						"July 24", "poster url", description, "trailer url")
+
+[the_philadelphia_story,futurama,shawshank_redemption,jurrassic_world,dirty_harry,five_broken_cameras,doubt,blade_runner]
