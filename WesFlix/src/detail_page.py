@@ -41,7 +41,6 @@ main_page_start = '''
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li><a href="index.html">Home</a></li>
-                <li class="active"><a href="template.html">Template</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="calendar.html">Calendar</a></li>
               </ul>
@@ -139,12 +138,12 @@ def set_contents(movie):
     return (main_page_start + content + end_page)
 
 
-def open_movies_page(movies):
+def write_detailed_pages(movies):
     # Create or overwrite the output file
 
     # Replace the movie tiles placeholder generated content
     for each in movies:
-      file_name = each + ".html"
+      file_name = each.title + '.html'
       output_file = open(file_name, 'w')
       # Write a file for each page
       output_file.write(set_contents(each))

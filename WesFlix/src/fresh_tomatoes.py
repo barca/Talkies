@@ -58,7 +58,6 @@ main_page_content = '''
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="template.html">Template</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="calendar.html">Calendar</a></li>
               </ul>
@@ -103,12 +102,12 @@ carousel_finished = '''
 
 carousel_template = '''
         <div class="{is_active}" id="{item_id}">
-          <!--<img class="first-slide img-responsive"src="{wide_pic}" alt="First slide">-->
+          <img class="first-slide img-responsive"src="{wide_pic}" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>{movie_title}</h1>
               <p>{movie_desc}</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Watch Trailer</a></p>
+              <p><a class="btn btn-lg btn-primary" href="{movie_title}.html" role="button">Watch Trailer</a></p>
             </div>
           </div>
         </div>
@@ -124,10 +123,10 @@ sec_two = '''
 '''
 sec_two_template = '''
         <div class="col-lg-3">
-          <img src="../static/imgs/dirtyharry.png" alt="poster" height="200">
+          <img src="{poster}" alt="poster" height="200">
           <h2>{movie_title}</h2>
           <p>{movie_desc}</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-default" href="{movie_title}.html" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-3 -->
 '''
 
@@ -169,7 +168,7 @@ def set_carousel(movies):
             movie_title=movie.title,
             item_id=item_id,
             wide_pic=movie.big_pic,
-            movie_desc=movie.desc
+            movie_desc=movie.desc,
         )
         id += 1
         is_active = "item"
