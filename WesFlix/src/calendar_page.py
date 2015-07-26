@@ -5,20 +5,33 @@ import re
 
 # Styles and scripting for the page
 main_page_start = '''
-<!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
     <title>WesFlix</title>
 
+    <!-- Bootstrap core CSS -->
     <link href="../static/lib/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="../static/assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
     <link href="../static/css/carousel.css" rel="stylesheet">
     <link href="../static/css/styles.css" rel="stylesheet">
   </head>
@@ -27,6 +40,7 @@ main_page_start = '''
  <body>
     <div class="navbar-wrapper">
       <div class="container">
+
         <nav class="navbar navbar-inverse navbar-static-top">
           <div class="container">
             <div class="navbar-header">
@@ -41,9 +55,8 @@ main_page_start = '''
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li><a href="index.html">Home</a></li>
-                <li class="active"><a href="template.html">Template</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="calendar.html">Calendar</a></li>
+                <li class="active"><a href="calendar.html">Calendar</a></li>
               </ul>
             <div class="input-group" style="padding-top: 8px">
               <input type="text" class="form-control" id="input" placeholder="Search for a specific trailer...">
@@ -56,61 +69,33 @@ main_page_start = '''
       </div>
     </div>
 
-      <hr class="featurette-divider" style="border-top-color: #fff">
+    <hr class="featurette-divider" style="border-top-color: #fff">
+    <div class="container">
+
 
 '''
 
 
 content_template = '''
-   <div class="row featurette">
-      <div class="container" style="padding-left:0;">
-        <div class="col-md-4" id="infoSec">
-          <img src="{movie_poster}" alt="Movie Poster"  height="300">
-          <h2>10:00 PM, {movie_date}</h2>
-          <h2>{movie_title}</h2>
-          
-
-          <p><a class="btn btn-default" href="order.html" role="button">Get Tickets &raquo;</a></p>
+    <div class="row featurette">
+      <div class="col-md-2"><h2>{movie_title}</h2>
+        <h2 style="margin-top:0px">{movie_date}</h2>
         </div>
-        <div class="col-md-8">
-          <iframe class="embed-responsive-item" width="700" height="394" src="{trailer_url}" frameborder="0" allowfullscreen></iframe>
-          <div class="row featurette">
-            <div class="col-md-2">
-            <h2>Director:</h2>
-            <h2>Runtime:</h2>
-            </div>
-            <div class="col-md-4">
-            <h2 class="text-muted">{movie_director}</h2>
-            <h2 class="text-muted">{movie_runtime} minutes</h2>
-            </div>
-            <div class="col-md-1">
-            <h2>Cast:</h2>
-            </div>
-            <div class="col-md-5">
-            <h2 class="text-muted">{lead_actor}</h2>
-            <h2 class="text-muted">{second_actor}</h2>
-            </div>
-          </div>
+        <div class="col-md-8"><p class="text-center calendar-item">{movie_desc}</p>
         </div>
+        <div class="col-md-2"><p><a class="btn btn-default calendar-item" href="{movie_title}.html" role="button">View details &raquo;</a></p></div>
       </div>
-       <div class="container">
-        <h2> About: </h2>
-        <p>{movie_desc}
-        </p>
-     </div>
+      <hr class="featurette-divider calendar-divider">
 '''
 
 end_page = '''
-      <hr class="featurette-divider min" style="border-top-color: #fff">
       <!-- FOOTER -->
       <footer>
-        <div class="container">
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>&copy; 2015 Tyler Harden. </p>
-        </div>
       </footer>
 
-    <!-- /.container -->
+    </div><!-- /.container -->
 
 
     <!-- Bootstrap core JavaScript
@@ -121,37 +106,29 @@ end_page = '''
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
     <script src="../static/assets/js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../static/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../stati/assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
+
 '''
 
 
-def set_contents(movie):
-    content = content_template.format(
-        movie_title=movie.title,
-        movie_date=movie.date,
-        movie_director=movie.director,
-        movie_runtime=movie.runtime,
-        trailer_url=movie.trailer,
-        lead_actor=movie.main_cast_member,
-        second_actor=movie.secondary_cast_member,
-        movie_poster=movie.poster,
-        movie_desc=movie.desc
-    )
+def set_contents(movies):
+    content = ""
+    for movie in movies:
+      content += content_template.format(
+          movie_title=movie.title,
+          movie_date=movie.date,
+          movie_desc=movie.desc
+      )
     return (main_page_start + content + end_page)
 
 
-def open_movies_page(movies):
+def write_calendar(movies):
     # Create or overwrite the output file
 
     # Replace the movie tiles placeholder generated content
-    for each in movies:
-      output_file = open('dirtyHarry.html', 'w')
-      # Write a file for each page
-      output_file.write(set_contents(each))
-      output_file.close()
-
-    # open the output file in the browser (in a new tab, if possible)
-    url = os.path.abspath(output_file.name)
-    webbrowser.open('file://' + url, new=2)
+    output_file = open('calendar.html', 'w')
+    # Write a file for each page
+    output_file.write(set_contents(movies))
+    output_file.close()

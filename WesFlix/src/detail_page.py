@@ -68,9 +68,6 @@ content_template = '''
           <img src="{movie_poster}" alt="Movie Poster"  height="300">
           <h2>10:00 PM, {movie_date}</h2>
           <h2>{movie_title}</h2>
-          
-
-          <p><a class="btn btn-default" href="order.html" role="button">Get Tickets &raquo;</a></p>
         </div>
         <div class="col-md-8">
           <iframe class="embed-responsive-item" width="700" height="394" src="{trailer_url}" frameborder="0" allowfullscreen></iframe>
@@ -147,11 +144,8 @@ def open_movies_page(movies):
 
     # Replace the movie tiles placeholder generated content
     for each in movies:
-      output_file = open('dirtyHarry.html', 'w')
+      file_name = each + ".html"
+      output_file = open(file_name, 'w')
       # Write a file for each page
       output_file.write(set_contents(each))
       output_file.close()
-
-    # open the output file in the browser (in a new tab, if possible)
-    url = os.path.abspath(output_file.name)
-    webbrowser.open('file://' + url, new=2)
