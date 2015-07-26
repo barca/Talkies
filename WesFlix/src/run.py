@@ -1,4 +1,4 @@
 from entertainment_center import *
-from fresh_tomatoes import *
+from detail_page import *
 
 open_movies_page(Movies)

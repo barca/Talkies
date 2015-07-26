@@ -1,3 +1,10 @@
+import webbrowser
+import os
+import re
+
+
+# Styles and scripting for the page
+main_page_start = '''
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -51,49 +58,50 @@
 
       <hr class="featurette-divider" style="border-top-color: #fff">
 
-      <div class="row featurette">
+'''
+
+
+content_template = '''
+   <div class="row featurette">
       <div class="container" style="padding-left:0;">
         <div class="col-md-4" id="infoSec">
-          <img src="../static/imgs/dirtyharry.png" alt="Dirty Harry poster"  height="300">
-          <h2>10:00 PM, July 17</h2>
-          <h2>Dirty Harry</h2>
+          <img src="{movie_poster}" alt="Movie Poster"  height="300">
+          <h2>10:00 PM, {movie_date}</h2>
+          <h2>{movie_title}</h2>
           
 
           <p><a class="btn btn-default" href="order.html" role="button">Get Tickets &raquo;</a></p>
         </div>
         <div class="col-md-8">
-          <iframe  class="embed-responsive-item" width="700" height="394" src="https://www.youtube.com/embed/HjBNldYiUmg" frameborder="0" allowfullscreen></iframe>
+          <iframe class="embed-responsive-item" width="700" height="394" src="{trailer_url}" frameborder="0" allowfullscreen></iframe>
           <div class="row featurette">
             <div class="col-md-2">
             <h2>Director:</h2>
             <h2>Runtime:</h2>
             </div>
             <div class="col-md-4">
-            <h2 class="text-muted">Don Siegel</h2>
-            <h2 class="text-muted">103 minutes</h2>
+            <h2 class="text-muted">{movie_director}</h2>
+            <h2 class="text-muted">{movie_runtime} minutes</h2>
             </div>
             <div class="col-md-1">
             <h2>Cast:</h2>
             </div>
             <div class="col-md-5">
-            <h2 class="text-muted">Clint Eastwood</h2>
-            <h2 class="text-muted">Andrew Robbinson</h2>
+            <h2 class="text-muted">{lead_actor}</h2>
+            <h2 class="text-muted">{second_actor}</h2>
             </div>
           </div>
         </div>
       </div>
        <div class="container">
         <h2> About: </h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a vehicula orci. Maecenas lectus mauris, porta sit amet tincidunt quis, laoreet in lorem. Aenean blandit porttitor magna ut feugiat. Duis at urna quis mauris mollis ullamcorper vel vitae elit. Cras sit amet suscipit tortor.
+        <p>{movie_desc}
         </p>
      </div>
+'''
 
-
+end_page = '''
       <hr class="featurette-divider min" style="border-top-color: #fff">
-
-
-
-
       <!-- FOOTER -->
       <footer>
         <div class="container">
@@ -116,3 +124,34 @@
     <script src="../static/assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
+'''
+
+
+def set_contents(movie):
+    content = content_template.format(
+        movie_title=movie.title,
+        movie_date=movie.date,
+        movie_director=movie.director,
+        movie_runtime=movie.runtime,
+        trailer_url=movie.trailer,
+        lead_actor=movie.main_cast_member,
+        second_actor=movie.secondary_cast_member,
+        movie_poster=movie.poster,
+        movie_desc=movie.desc
+    )
+    return (main_page_start + content + end_page)
+
+
+def open_movies_page(movies):
+    # Create or overwrite the output file
+
+    # Replace the movie tiles placeholder generated content
+    for each in movies:
+      output_file = open('dirtyHarry.html', 'w')
+      # Write a file for each page
+      output_file.write(set_contents(each))
+      output_file.close()
+
+    # open the output file in the browser (in a new tab, if possible)
+    url = os.path.abspath(output_file.name)
+    webbrowser.open('file://' + url, new=2)

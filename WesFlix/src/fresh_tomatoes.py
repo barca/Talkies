@@ -85,7 +85,7 @@ main_page_content = '''
 '''
 
 
-# A single movie entry html template    
+# A single movie entry html template
 
 carousel_finished = '''
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -96,6 +96,7 @@ carousel_finished = '''
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
+    </div>
     </div>
 
 '''
@@ -123,7 +124,7 @@ sec_two = '''
 '''
 sec_two_template = '''
         <div class="col-lg-3">
-          <img src="{poster}" alt="{poster_name}"  height="200">
+          <img src="../static/imgs/dirtyharry.png" alt="poster" height="200">
           <h2>{movie_title}</h2>
           <p>{movie_desc}</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
@@ -131,6 +132,7 @@ sec_two_template = '''
 '''
 
 end_page = '''
+    </div>
     <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>&copy; 2015 Tyler Harden. </p>
@@ -166,7 +168,7 @@ def set_carousel(movies):
             is_active = is_active,
             movie_title=movie.title,
             item_id=item_id,
-            wide_pic=movie.poster,
+            wide_pic=movie.big_pic,
             movie_desc=movie.desc
         )
         id += 1
@@ -181,17 +183,17 @@ def set_next_week_lineup(movies):
         # Append the tile for the movie with its content filled in
         content += sec_two_template.format(
             movie_title=movie.title,
-            poster_name=movie.title + "poster",
+            poster_name= movie.title,
             poster=movie.poster,
             movie_desc=movie.desc
         )
-    return (sec_two + sec_two_template + end_page)
+    return (sec_two + content + end_page)
 
 
 
 def open_movies_page(movies):
     # Create or overwrite the output file
-    output_file = open('fresh_tomatoes.html', 'w')
+    output_file = open('index.html', 'w')
 
     # Replace the movie tiles placeholder generated content
     rendered_content = set_carousel(movies[:4]) + set_next_week_lineup(movies[4:])
