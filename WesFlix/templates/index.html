@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<head>
+    <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +13,7 @@
     <title>WesFlix</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../static/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -28,9 +29,8 @@
     <link href="../static/css/carousel.css" rel="stylesheet">
     <link href="../static/css/styles.css" rel="stylesheet">
   </head>
-<!-- NAVBAR
-================================================== -->
-  <body>
+
+<body>
     <div class="navbar-wrapper">
       <div class="container">
 
@@ -48,8 +48,6 @@
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="template.html">Template</a></li>
-                <li><a href="contact.html">Contact</a></li>
                 <li><a href="calendar.html">Calendar</a></li>
               </ul>
             <div class="input-group" style="padding-top: 8px">
@@ -63,10 +61,6 @@
 
       </div>
     </div>
-
-
-    <!-- Carousel
-    ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
@@ -76,48 +70,56 @@
         <li data-target="#myCarousel" data-slide-to="3"></li>
       </ol>
       <div class="carousel-inner" role="listbox">
+
         <div class="item active" id="item1">
-          <!--<img class="first-slide img-responsive"src="imgs/pStory.jpg" alt="First slide">-->
+          <img class="first-slide img-responsive"src="">
           <div class="container">
             <div class="carousel-caption">
               <h1>The Philadelphia Story</h1>
-              <p>This 1940 Kathrine Hepburn, romantic comedy focuses on a young soccalite and her relationship between her ex-husband, fiance and a reporter. Unclear about her feelings for all three men, Tracy must decide whom she truly loves</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Watch Trailer</a></p>
+              <p>This 1940 Kathrine Hepburn, romantic comedy focuses on a young     		soccalite and her relationship between her ex-husband,     		fiance and a reporter. Unclear about her feelings for all     		three men, Tracy must decide whom she truly loves.</p>
+              <p><a class="btn btn-lg btn-primary" href="/the_philadelphia_story" role="button">Watch Trailer</a></p>
             </div>
           </div>
         </div>
+
+
         <div class="item" id="item2">
-          <img class="second-slide" src="../static/imgs/futurama.png" alt="Second slide">
+          <img class="first-slide img-responsive"src="../static/imgs/futurama.png">
           <div class="container">
             <div class="carousel-caption">
               <h1>Futurama</h1>
-              <p>Matt Groening's critically acclaimed Sci-Fi cartoon is the story of Philip J. Fry, cryogenically frozen for 1000 years after pizza delivery gone wrong.  He awakens to find a world of alcholic robots, cyclopses, and mad scientists. Join his adventures aboard the planet express ship! </p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Watch Trailer</a></p>
+              <p>Matt Groening's critically acclaimed Sci-Fi cartoon is the  	story of Philip J. Fry, cryogenically frozen  	for 1000 years after pizza delivery gone wrong. He awakens  	to find a world of alcholic robots, cyclopses, and mad  	scientists. Join his adventures aboard the planet express ship!.</p>
+              <p><a class="btn btn-lg btn-primary" href="/futurama" role="button">Watch Trailer</a></p>
             </div>
           </div>
         </div>
+
+
         <div class="item" id="item3">
-          <img class="third-slide" src="../static/imgs/shawshank.jpg" alt="Third slide">
+          <img class="first-slide img-responsive"src="../static/imgs/shawshank.jpg">
           <div class="container">
             <div class="carousel-caption">
               <h1>Shawshank Redemption</h1>
-              <p>Andy Dufresne is sentanced to two consecutive life sentances for a crime he did not commit. While there, he forms a friendship with Red and must endure the brutality of prison life.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Watch Trailer</a></p>
+              <p>Andy Dufresne (Tim Robbins) is sentenced to two consecutive 	life terms in prison for the murders of his wife and her lover 	and is sentenced to a tough prison.  However, only Andy knows  	he didn't commit the crimes.</p>
+              <p><a class="btn btn-lg btn-primary" href="shawshank_redemption.html" role="button">Watch Trailer</a></p>
             </div>
           </div>
         </div>
+
+
         <div class="item" id="item4">
-          <img class="fourth-slide" src="../static/imgs/jWorld.jpg" alt="Final slide">
+          <img class="first-slide img-responsive"src="../static/imgs/jWorld.jpg">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Jurassic World</h1>
-              <p>The park is open.  However, disaster strikes again, and the park plunges into chaos.  Claire Dearing and Owen Grady are forced from safety in order to search for something dear to them</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Watch Trailer</a></p>
+              <h1>Jurrassic World</h1>
+              <p>the park is open. However, disaster strikes again, 	and the park plunges into chaos. Claire Dearing 	and Owen Grady are forced from safety in order 	to search for something dear to them</p>
+              <p><a class="btn btn-lg btn-primary" href="/jurassic_world" role="button">Watch Trailer</a></p>
             </div>
           </div>
         </div>
-      </div>
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+
+
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
       </a>
@@ -125,46 +127,46 @@
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
-    </div><!-- /.carousel -->
+    </div>
+    </div>
 
 
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
 
     <div class="container marketing">
       <h2>Next Week's Movies: </h2>
       <!-- Three columns of text below the carousel -->
       <div class="row">
+
         <div class="col-lg-3">
-          <img src="../static/imgs/dirtyharry.png" alt="Dirty Harry poster"  height="200">
+          <img src="http://bit.ly/1JnBErN" alt="poster" height="200">
           <h2>Dirty Harry</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p>This is the story of two killers, Harry Callahan and a serial killer.</p>
+          <p><a class="btn btn-default" href="/dirty_harry" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-3 -->
+
         <div class="col-lg-3">
-          <img src="../static/imgs/fiveCameras.jpg" alt="Five Broken Cameras poster"  height="200">
+          <img src="../static/imgs/fiveCameras.jpg" alt="poster" height="200">
           <h2>Five Broken Cameras</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p>Beginning in 2005, Palestinian Emad Burnet records his 	village's resistance to the encroachment of Israeli 	settlements. The title refers to the five cameras destroyed 	during the filmaking process</p>
+          <p><a class="btn btn-default" href="/five_broken_cameras" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-3 -->
+
         <div class="col-lg-3">
-          <img src="../static/imgs/doubt.jpg" alt="Doubt Poster"  height="200">
+          <img src="http://bit.ly/1Ms5CvP" alt="poster" height="200">
           <h2>Doubt</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p>There is a secret at a Catholic school, a nun, Merryl 	Streep is determined to find the truth 	even if those around her attempt to prevent her search.</p>
+          <p><a class="btn btn-default" href="/doubt" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-3 -->
+
         <div class="col-lg-3">
-          <img src="../static/imgs/bladerunner.jpg" alt="Blade Runner Poster"  height="200">
+          <img src="../static/imgs/bladerunner.jpg" alt="poster" height="200">
           <h2>Blade Runner</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <p>Harrison Ford, Replicant Hunter. His assignment: eliminate 	four escaped Replicants from the colonies who 	have returned to Earth</p>
+          <p><a class="btn btn-default" href="/blade_runner" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-3 -->
-      </div><!-- /.row -->
 
-
-      <!-- FOOTER -->
-      <footer>
+    </div>
+    <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>&copy; 2015 Tyler Harden. </p>
       </footer>
@@ -175,8 +177,8 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../static/lib/jquery.min.js"></script>
-    <script src="../static/lib/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
     <script src="../static/assets/js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
