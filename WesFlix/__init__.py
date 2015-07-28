@@ -12,28 +12,28 @@ def index():
 def contact():
   return render_template('contact.html')
 @app.route('/blade_runner')
-def template():
+def blade_runner():
   return render_template('Blade Runner.html')
 @app.route('/dirty_harry')
-def template():
+def dirty_harry():
   return render_template('Dirty Harry.html')
 @app.route('/doubt')
-def template():
+def doubt():
   return render_template('Doubt.html')
 @app.route('/five_broken_cameras')
-def template():
+def five_broken_cameras():
   return render_template('Five Broken Cameras.html')
 @app.route('/futurama')
-def template():
+def futurama():
   return render_template('Futurama.html')
 @app.route('/jurassic_world')
-def template():
+def jurassic_world():
   return render_template('Jurassic World.html')
 @app.route('/shawshank_redemption')
-def template():
+def shawshank_redemption():
   return render_template('Shawshank Redemption.html')
 @app.route('/the_philadelphia_story')
-def template():
+def the_philadelphia_story():
   return render_template('The Philadelophia Story.html')
 if __name__ == '__main__':
     app.run()
