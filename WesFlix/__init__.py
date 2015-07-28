@@ -15,7 +15,7 @@ def contact():
 def blade_runner():
   return render_template('Blade Runner.html')
 @app.route('/dirty_harry')
-def dirty_harry_render():
+def dirty_harry():
   return render_template('Dirty Harry.html')
 @app.route('/doubt')
 def doubt():
