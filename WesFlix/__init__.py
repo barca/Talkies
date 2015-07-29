@@ -29,9 +29,9 @@ def five_broken_cameras():
 @app.route('/futurama')
 def futurama():
   return render_template('Futurama.html')
-@app.route('/jurassic_world')
+@app.route('/jurrassic_world')
 def jurassic_world():
-  return render_template('Jurassic World.html')
+  return render_template('Jurrassic World.html')
 @app.route('/shawshank_redemption')
 def shawshank_redemption():
   return render_template('Shawshank Redemption.html')
