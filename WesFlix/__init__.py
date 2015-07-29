@@ -37,6 +37,6 @@ def shawshank_redemption():
   return render_template('Shawshank Redemption.html')
 @app.route('/the_philadelphia_story')
 def the_philadelphia_story():
-  return render_template('The Philadelaphia Story.html')
+  return render_template('The Philadelphia Story.html')
 if __name__ == '__main__':
     app.run()
