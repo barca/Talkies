@@ -4,6 +4,7 @@ from flask import Blueprint
 from flask import request
 from pymongo import MongoClient
 from bson.objectid import ObjectId
+from datetime import date
 client = MongoClient()
 db = client.moviedb
 movies = db.movies
@@ -37,7 +38,16 @@ def add_new_movie():
     })
   movies.insert(to_add)
 
-@movie.route('/all', methods = ['GET'])
-def get_all_movies():
-  movies.find()
+@movie.route('/calendar', methods = ['GET'])
+def get_calendar():
+  movies.find().sort({date: -1})
+@movie.route('/homepage', methods = ['GET'] )
+def get_homepage_movies():
+  now = date.today()
+  movies.find({
+      date : {
+        '$gte' : now - now.weekday,
+        '$lte' : now + (14 - now.weekday),
+    }
+      }).sort({date: -1})
 
