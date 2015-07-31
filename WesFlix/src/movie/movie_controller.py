@@ -26,6 +26,7 @@ def add_new_movie():
   date = request.form.get('date')
   desc = request.form.get('desc')
   to_add = jsonify({
+    'title': title,
     'runtime': runtime,
     'big_pic': big_pic,
     'trailer': trailer,
@@ -51,3 +52,6 @@ def get_homepage_movies():
     }
       }).sort({date: -1})
 
+@movie.route(/<title>, methods = ["GET"])
+def get_detail_page():
+  movies.find({'title' : title})
