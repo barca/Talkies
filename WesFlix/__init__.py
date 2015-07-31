@@ -1,8 +1,8 @@
 from flask import Flask
 from flask import render_template
-
+from src.movie.movie_controller import movie
 app = Flask(__name__)
-
+app.register_blueprint(movie, url_prefix='/movies')
 # Initialize blueprints
 
 @app.route('/')

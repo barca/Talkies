@@ -12,7 +12,8 @@ movie = Blueprint('movie', __name__, template_folder = 'templates')
 
 # needs to require authentication
 # standard CRUD route, adds document to collection
-@movies.route('', methods = ['POST']):
+@movie.route('', methods = ['POST'])
+def add_new_movie():
   title = request.form.get('title')
   runtime = request.form.get('runtime')
   big_pic = request.form.get('big_pic')
@@ -26,7 +27,7 @@ movie = Blueprint('movie', __name__, template_folder = 'templates')
   to_add = jsonify({
     'runtime': runtime,
     'big_pic': big_pic,
-    'trailer': trailer
+    'trailer': trailer,
     'poster': poster,
     'director': director,
     'cast1': cast1,
@@ -36,6 +37,7 @@ movie = Blueprint('movie', __name__, template_folder = 'templates')
     })
   movies.insert(to_add)
 
-@movie.route('/all', methods = ['GET']):
+@movie.route('/all', methods = ['GET'])
+def get_all_movies():
   movies.find()
 
