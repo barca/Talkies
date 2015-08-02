@@ -2,9 +2,10 @@ from flask import make_response
 from flask import jsonify
 from flask import Blueprint
 from flask import request
+from bson.json_util import dumps
 from pymongo import MongoClient
-from bson.objectid import ObjectId
 from datetime import date
+import pymongo
 client = MongoClient()
 db = client.moviesdb
 movies = db.movies
@@ -43,7 +44,7 @@ def add_new_movie():
   return jsonify({'database': 'updated'})
 @movie.route('/calendar', methods = ['GET'])
 def get_calendar():
-  movies.find().sort({date: -1})
+  return dumps({'results': list(movies.find().sort('date',pymongo.DESCENDING))})
 @movie.route('/homepage', methods = ['GET'] )
 def get_homepage_movies():
   now = date.today()
