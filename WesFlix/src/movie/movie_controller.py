@@ -6,7 +6,7 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId
 from datetime import date
 client = MongoClient()
-db = client.moviedb
+db = client.moviesdb
 movies = db.movies
 movie = Blueprint('movie', __name__, template_folder = 'templates')
 
@@ -25,7 +25,7 @@ def add_new_movie():
   cast2 = request.form.get('cast2')
   date = request.form.get('date')
   desc = request.form.get('desc')
-  to_add = jsonify({
+  to_add = {
     'title': title,
     'runtime': runtime,
     'big_pic': big_pic,
@@ -36,9 +36,11 @@ def add_new_movie():
     'cast2': cast2,
     'date': date,
     'desc': desc,
-    })
+    }
   movies.insert(to_add)
+  # in future make response should render an example page
 
+  return jsonify({'database': 'updated'})
 @movie.route('/calendar', methods = ['GET'])
 def get_calendar():
   movies.find().sort({date: -1})
@@ -52,6 +54,6 @@ def get_homepage_movies():
     }
       }).sort({date: -1})
 
-@movie.route(/<title>, methods = ["GET"])
+@movie.route('/<title>', methods = ["GET"])
 def get_detail_page():
   movies.find({'title' : title})

@@ -16,7 +16,7 @@ client = MongoClient()
 db = client.menudb
 menu_items = db.menu_items
 order_history = db.order_history
-smshook = Blueprint('smshook', __name__, template_folder = 'templates')
+order = Blueprint('order', __name__, template_folder = 'templates')
 
 def send_text(destination,origin,message):
   try:
@@ -29,6 +29,7 @@ def send_text(destination,origin,message):
     return True
   except:
     return False
+
 
 def write_message(name,id_card, movie):
   return "Thanks for using WesFlix! "+ name + "we hope you enjoy watching " + movie + "." + "ID CARD NUMBER: " + id_card
