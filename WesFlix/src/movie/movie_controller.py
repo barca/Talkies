@@ -48,13 +48,14 @@ def get_calendar():
 @movie.route('/homepage', methods = ['GET'] )
 def get_homepage_movies():
   now = date.today()
-  movies.find({
+  front_page = movies.find({
       date : {
         '$gte' : now - now.weekday,
         '$lte' : now + (14 - now.weekday),
     }
       }).sort({date: -1})
+  return dumps(front_page)
 
 @movie.route('/<title>', methods = ["GET"])
-def get_detail_page():
-  movies.find({'title' : title})
+def get_detail_page(title):
+  return dumps(movies.find_one({'title' : title}))
